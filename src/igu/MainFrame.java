@@ -5,6 +5,7 @@
  */
 package igu;
 
+import igu.Empleado.clientes.EmpleadoPanel;
 import igu.compras.ComprasMainPanel;
 
 /**
@@ -34,6 +35,7 @@ public class MainFrame extends javax.swing.JFrame {
         menubar = new javax.swing.JPanel();
         theButton3 = new igu.util.buttons.TheButton();
         theButton2 = new igu.util.buttons.TheButton();
+        botonEmpleado = new igu.util.buttons.TheButton();
         dp = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         mainPanel = new javax.swing.JPanel();
@@ -69,22 +71,35 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        botonEmpleado.setBackground(new java.awt.Color(240, 240, 240));
+        botonEmpleado.setForeground(new java.awt.Color(102, 102, 102));
+        botonEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/empleados.png"))); // NOI18N
+        botonEmpleado.setText("EMPLEADOS");
+        botonEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEmpleadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menubarLayout = new javax.swing.GroupLayout(menubar);
         menubar.setLayout(menubarLayout);
         menubarLayout.setHorizontalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menubarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(theButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(theButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menubarLayout.setVerticalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(theButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(theButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         dp.setBackground(new java.awt.Color(204, 204, 204));
@@ -101,7 +116,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         dpLayout.setVerticalGroup(
             dpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -137,6 +152,11 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ChangePanel(mainPanel, new ComprasMainPanel());
     }//GEN-LAST:event_theButton2ActionPerformed
+
+    private void botonEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEmpleadoActionPerformed
+     new ChangePanel(mainPanel, new EmpleadoPanel());
+    
+    }//GEN-LAST:event_botonEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +194,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private igu.util.buttons.TheButton botonEmpleado;
     private javax.swing.JPanel dp;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
